@@ -5,6 +5,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-add_lunch_combo omni_penang-user
-add_lunch_combo omni_penang-userdebug
-add_lunch_combo omni_penang-eng
+add_lunch_combo twrp_penang-user
+add_lunch_combo twrp_penang-userdebug
+add_lunch_combo twrp_penang-eng
