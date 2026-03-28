@@ -1,0 +1,17 @@
+platform_dlkm.ko
+machine_dlkm.ko
+native_dlkm.ko
+sensors_class.ko
+mmi_annotate.ko
+mmi_info.ko
+mmi_sys_temp.ko
+bq2589x_charger.ko
+mmi_charger.ko
+focaltech_0flash_v2_mmi.ko
+nova_0flash_mmi.ko
+q6_dlkm.ko
+q6_notifier_dlkm.ko
+q6_pdr_dlkm.ko
+wlan.ko
+exfat.ko
+zram.ko

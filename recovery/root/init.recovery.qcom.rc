@@ -26,20 +26,29 @@
 #
 
 on early-init
-    insmod /lib/modules/mmi_annotate.ko
-    insmod /lib/modules/mmi_info.ko
-    insmod /lib/modules/cw2217b_fg_mmi.ko
-    insmod /lib/modules/adapter_class.ko
-    insmod /lib/modules/mmi_charger.ko
-    insmod /lib/modules/mmi_discrete_charger_class.ko
-    insmod /lib/modules/sgm4154x_charger.ko
-    insmod /lib/modules/bq2589x_charger.ko
-    insmod /lib/modules/mmi_discrete_charger.ko
-    insmod /lib/modules/qpnp_adaptive_charge.ko
-    insmod /lib/modules/tcpc_class.ko
-    insmod /lib/modules/tcpc_sgm7220.ko
-    insmod /lib/modules/tcpc_rt1711h.ko
-    insmod /lib/modules/rt_pd_manager.ko
+    insmod /vendor/lib/modules/mmi_annotate.ko
+    insmod /vendor/lib/modules/mmi_info.ko
+    insmod /vendor/lib/modules/cw2217b_fg_mmi.ko
+    insmod /vendor/lib/modules/adapter_class.ko
+    insmod /vendor/lib/modules/mmi_charger.ko
+    insmod /vendor/lib/modules/mmi_discrete_charger_class.ko
+    insmod /vendor/lib/modules/sgm4154x_charger.ko
+    insmod /vendor/lib/modules/bq2589x_charger.ko
+    insmod /vendor/lib/modules/mmi_discrete_charger.ko
+    insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
+    insmod /vendor/lib/modules/tcpc_class.ko
+    insmod /vendor/lib/modules/tcpc_sgm7220.ko
+    insmod /vendor/lib/modules/tcpc_rt1711h.ko
+    insmod /vendor/lib/modules/rt_pd_manager.ko
+    insmod /vendor/lib/modules/platform_dlkm.ko
+    insmod /vendor/lib/modules/machine_dlkm.ko
+    insmod /vendor/lib/modules/native_dlkm.ko
+    insmod /vendor/lib/modules/sensors_class.ko
+    insmod /vendor/lib/modules/focaltech_0flash_v2_mmi.ko
+    insmod /vendor/lib/modules/nova_0flash_mmi.ko
+    insmod /vendor/lib/modules/q6_dlkm.ko
+    insmod /vendor/lib/modules/q6_notifier_dlkm.ko
+    insmod /vendor/lib/modules/q6_pdr_dlkm.ko
 
 on init
     mkdir /config
@@ -93,3 +102,10 @@ on property:sys.usb.config=fastboot && property:sys.usb.ffs.ready=1 && property:
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+service qseecomd /vendor/bin/qseecomd
+    class core
+    user system
+    group system
+    socket qseecomd stream 0660 system system
+    seclabel u:r:qseecomd:s0
