@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := device/motorola/penang
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -16,16 +17,18 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
-
-PRODUCT_PACKAGES += \
-    bootctrl.holi
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    android.hardware.boot@1.0-service \
     bootctrl.holi \
-    libgptutils \
-    libz \
-    libcutils
+    bootctrl.holi.recovery
+
+# PRODUCT_PACKAGES += \
+#     bootctrl.holi
+
+# PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+#     bootctrl.holi \
+#     libgptutils \
+#     libz \
+#     libcutils
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
