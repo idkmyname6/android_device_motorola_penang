@@ -119,3 +119,9 @@ TW_NO_LEGACY_PROPS := true
 TW_INCLUDE_RESETPROP := true
 TW_EXCLUDE_SUPERSU := true
 # ^ what does this mean
+
+# Brightness
+TW_BRIGHTNESS_PATH := /sys/devices/platform/soc/5e00000.qcom,mdss_mdp/backlight/panel0-backlight/brightness
+TW_MAX_BRIGHTNESS := 1650
+TW_DEFAULT_BRIGHTNESS := 825
+# ^ the builder complained about this so i added it
