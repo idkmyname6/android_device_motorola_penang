@@ -16,9 +16,9 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/motorola/penang/device.mk)
 
 PRODUCT_DEVICE := penang
-PRODUCT_NAME := omni_penang
+PRODUCT_NAME := twrp_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := Holi for arm64
+PRODUCT_MODEL := moto g53 5G
 PRODUCT_MANUFACTURER := motorola
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
