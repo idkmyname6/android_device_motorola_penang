@@ -78,6 +78,7 @@ TARGET_BOARD_PLATFORM := holi
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_DEVICE_MODULES += qseecomd
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
@@ -125,3 +126,7 @@ TW_BRIGHTNESS_PATH := /sys/devices/platform/soc/5e00000.qcom,mdss_mdp/backlight/
 TW_MAX_BRIGHTNESS := 1650
 TW_DEFAULT_BRIGHTNESS := 825
 # ^ the builder complained about this so i added it
+
+# some VABC stuff
+BOARD_VIRTUAL_AB_COMPRESSION := true
+BOARD_USES_VENDOR_DYNAMIC_PARTITIONS := true
