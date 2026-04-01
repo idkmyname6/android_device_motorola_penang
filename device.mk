@@ -38,4 +38,6 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     qseecomd \
     libQSEEComAPI \
-    libdrmfs
+    libdrmfs \
+    libxml2 \
+    libandroidicu
