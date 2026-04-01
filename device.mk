@@ -39,5 +39,7 @@ PRODUCT_PACKAGES += \
     qseecomd \
     libQSEEComAPI \
     libdrmfs \
-    libxml2 \
+    libxml2 
+
+PRODUCT_HOST_PACKAGES += \
     libandroidicu
